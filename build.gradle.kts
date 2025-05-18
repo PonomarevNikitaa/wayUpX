@@ -18,7 +18,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("MainKt") // Указываем, с какого файла запускать main()
+    mainClass.set("org.example.MainKt")
 }
 
 kotlin {
