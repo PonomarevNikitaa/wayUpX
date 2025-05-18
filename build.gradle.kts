@@ -24,3 +24,16 @@ application {
 kotlin {
     jvmToolchain(22)
 }
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "MainKt" // имя главного класса (или свой)
+    }
+    archiveFileName.set("WayUpX.jar") // итоговое имя файла
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(sourceSets.main.get().output)
+    dependsOn(configurations.runtimeClasspath)
+    from({
+        configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) }
+    })
+}

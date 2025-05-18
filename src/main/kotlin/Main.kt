@@ -1433,7 +1433,7 @@ class CareerGameBot : TelegramLongPollingBot() {
 
     )
 
-    override fun getBotToken(): String = "7004512387:AAHVvGXxb-pbtNtU-CrJeAX2HLDLz9lyiq0"
+    override fun getBotToken(): String = System.getenv("BOT_TOKEN") ?: error("BOT_TOKEN not set") //"7004512387:AAHVvGXxb-pbtNtU-CrJeAX2HLDLz9lyiq0"
     override fun getBotUsername(): String = "@WayUpX_bot"
 
     private fun createMainMenu(): ReplyKeyboardMarkup {
