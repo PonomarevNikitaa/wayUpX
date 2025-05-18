@@ -27,7 +27,7 @@ kotlin {
 
 tasks.withType<Jar> {
     manifest {
-        attributes["Main-Class"] = "MainKt" // имя главного класса (или свой)
+        attributes["Main-Class"] = "org.example.MainKt"
     }
     archiveFileName.set("WayUpX.jar") // итоговое имя файла
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
